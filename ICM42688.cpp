@@ -351,6 +351,36 @@ int ICM42688::readAccGyro(double* accGyro) {
   return 1;
 }
 
+/* returns raw acceleration integer number in X direction*/
+uint16_t ICM42688::getRawAccelX(){
+  return _accCounts[0];
+}
+
+/* returns raw acceleration integer number in Y direction*/
+uint16_t ICM42688::getRawAccelY(){
+  return _accCounts[1];
+}
+
+/* returns raw acceleration integer number in Z direction*/
+uint16_t ICM42688::getRawAccelZ(){
+  return _accCounts[2];
+}
+
+/* returns raw gyro integer number in X direction*/
+uint16_t ICM42688::getRawGyroX(){
+  return _gyroCounts[0];
+}
+
+/* returns raw gyro integer number in Y direction*/
+uint16_t ICM42688::getRawGyroY(){
+  return _gyroCounts[1];
+}
+
+/* returns raw gyro integer number in Z direction*/
+uint16_t ICM42688::getRawGyroZ(){
+  return _gyroCounts[2];
+}
+
 /* returns the accelerometer measurement in the x direction, m/s/s */
 double ICM42688::getAccelX_mss() {
   return _acc[0];

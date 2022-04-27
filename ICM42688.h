@@ -39,6 +39,12 @@ class ICM42688{
     int readAcc(double* acc);
     int readGyro(double* gyro);
     int readAccGyro(double* accGyro);
+    uint16_t getRawAccelX();
+    uint16_t getRawAccelY();
+    uint16_t getRawAccelZ();
+    uint16_t getRawGyroX();
+    uint16_t getRawGyroY();
+    uint16_t getRawGyroZ();
     double getAccelX_mss();
     double getAccelY_mss();
     double getAccelZ_mss();
@@ -90,6 +96,8 @@ class ICM42688{
     // data buffer
     double _acc[3] = {};
     double _gyro[3] = {};
+    uint16_t _rawAcc[3] = {};
+    uint16_t _rawGyro[3] = {};
     double _t = 0.0;
     uint8_t _isInterrupted = 0;
     // scale factors
